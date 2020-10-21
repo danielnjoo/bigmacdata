@@ -1,7 +1,7 @@
 ## code to prepare `DATASET` dataset goes here
 library(tidyverse)
 library(data.table)
-
+library(broom)
 
 big_mac_data1 <- readr::read_csv("data-raw/big-mac-full-index.csv") %>%
   janitor::clean_names()
@@ -54,10 +54,10 @@ for(currency in base_currencies) {
     ]
 }
 
-big_mac_data <- big_mac_data3 %>%
+bigmacdata <- big_mac_data3 %>%
   cbind(big_mac_data_adj[,c("USD", "GBP", "JPY", "CNY")]) %>%
   rename("imf_USD_adjusted"=USD, "imf_GBP_adjusted"=GBP, "imf_JPY_adjusted"=JPY,
          "imf_CNY_adjusted"=CNY) %>%
   select(-.resid)
 
-usethis::use_data(big_mac_data, overwrite = TRUE)
+usethis::use_data(bigmacdata, overwrite = TRUE)
