@@ -3,7 +3,7 @@
 
 Originally from the Economist, great interactive explanation of which can be found [here](https://www.economist.com/news/2020/07/15/the-big-mac-index). This package makes that data available and recalculates adjusted index figures on different IMF GDP data to increase coverage from 2000-2020 from 2011-2020.
 
-Dimensions of the dataset are 1329x25, covering 55 countries from April 2000 to July 2020 and 33 unqiue dates.
+Dimensions of the dataset are 1329x25, covering 55 countries from April 2000 to July 2020 and 33 unique dates.
 
 ### Codebook
 <table>

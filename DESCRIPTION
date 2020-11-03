@@ -5,7 +5,7 @@ Version: 0.1.0
 Author: Daniel Njoo
 Maintainer: Daniel Njoo <danielnjoo@gmail.com>
 Description: Makes the Economist's Big Mac Data available, and augments it with additional GDP data to calculate adjusted index prices starting from 2000.
-License: MIT
+License: MIT + file LICENSE
 Encoding: UTF-8
 LazyData: true
 Depends: 

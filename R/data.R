@@ -43,6 +43,25 @@
 #' imf_cny_adjusted \tab IMF GDP-adjusted premium/discount to CNY
 #' }
 #'
+#' @examples
+#'\dontrun{
+#' library(bigmacdata)
+#' bigmacdata %>%
+#'   filter(date==max(bigmacdata$date)) %>%
+#'   mutate(over=ifelse(imf_USD_adjusted>0, 1, 0)) %>%
+#'   ggplot(aes(
+#'     factor(name, levels=name[order(imf_USD_adjusted)]),
+#'     imf_USD_adjusted,
+#'     col=as.factor(over))) +
+#'   geom_linerange(aes(ymin=0, ymax=imf_USD_adjusted)) +
+#'   geom_point() +
+#'   coord_flip() +
+#'   theme(
+#'     axis.title.x = element_blank(),
+#'     axis.title.y = element_blank(),
+#'     legend.position = "none") +
+#'   labs(title="IMF GDP adjusted Big Mac USD Premia/Discount, July 2020")
+#'}
 #'
 #' @seealso \url{https://www.economist.com/news/2020/07/15/the-big-mac-index}
 #' @seealso \url{https://github.com/TheEconomist/big-mac-data}
